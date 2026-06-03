@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Admin · BuBe.co</title>
+    <meta name="description" content="Dashboard admin BuBe.co (simulasi): pesanan, resi, laporan." />
+    <link rel="stylesheet" href="./assets/css/styles.css" />
+  </head>
+  <body data-page="admin">
+    <div data-slot="header"></div>
+
+    <main class="container" style="padding: 22px 16px 0;">
+      <div id="adminRoot">
+        <div class="section" style="padding-top: 0;">
+          <div class="eyebrow">DASHBOARD ADMIN</div>
+          <h1 class="h2" style="margin-top: 10px;">BuBe.co Admin</h1>
+          <p class="muted" style="margin-top: 10px; max-width: 80ch; line-height: 1.75;">
+            Halaman ini adalah simulasi admin untuk review UI dan flow. Kamu bisa update status pesanan dan memasukkan nomor resi untuk tracking.
+          </p>
+        </div>
+
+        <section class="section">
+          <div class="grid cols-4">
+            <div class="card pad"><div class="eyebrow">PRODUK</div><div class="h3" style="margin-top:10px;" id="adminProducts">0</div></div>
+            <div class="card pad"><div class="eyebrow">PESANAN</div><div class="h3" style="margin-top:10px;" id="adminOrders">0</div></div>
+            <div class="card pad"><div class="eyebrow">PELANGGAN</div><div class="h3" style="margin-top:10px;" id="adminUsers">0</div></div>
+            <div class="card pad"><div class="eyebrow">TOTAL</div><div class="h3" style="margin-top:10px;" id="adminRevenue">Rp 0</div></div>
+          </div>
+        </section>
+
+        <section class="section">
+          <div style="display:flex; justify-content:space-between; gap:12px; flex-wrap:wrap; align-items:end;">
+            <div>
+              <div class="eyebrow">PESANAN</div>
+              <h2 class="h2" style="margin-top: 10px;">Kelola Pesanan</h2>
+            </div>
+            <a class="btn" href="./account.html">Akun</a>
+          </div>
+          <div id="adminOrdersList" class="grid" style="margin-top: 16px;"></div>
+        </section>
+
+        <section class="section">
+          <div class="card pad">
+            <div class="eyebrow">CATATAN</div>
+            <div class="h3" style="margin-top: 10px;">Batasan versi HTML statis</div>
+            <ul class="muted" style="margin: 10px 0 0; padding-left: 18px; line-height: 1.8;">
+              <li>Data disimpan di localStorage (tidak tersimpan di database).</li>
+              <li>Invoice: tombol “Unduh Invoice” menggunakan Print → Save PDF (tanpa generator PDF server).</li>
+              <li>Pembayaran/pengiriman: hanya simulasi instruksi dan tracking.</li>
+            </ul>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <div data-slot="footer"></div>
+    <div data-slot="fab"></div>
+
+    <script src="./assets/js/env.js"></script>
+    <script type="module" src="./assets/js/app.js"></script>
+  </body>
+</html>
+

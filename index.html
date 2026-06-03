@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>BuBe.co – Elegance in Every Style</title>
+    <meta name="description" content="Fashion wanita modern, elegan, dan berkelas. Tunik, blouse, dress, outer, setelan wanita, dan hijab." />
+    <meta property="og:title" content="BuBe.co – Elegance in Every Style" />
+    <meta property="og:description" content="Fashion wanita modern, elegan, dan berkelas untuk harian hingga acara formal." />
+    <meta property="og:type" content="website" />
+    <meta name="theme-color" content="#fcf9f4" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="./assets/css/styles.css" />
+  </head>
+  <body data-page="home">
+    <div data-slot="header"></div>
+
+    <main class="container" style="padding: 22px 16px 0;">
+      <section class="hero">
+        <div class="bg" id="heroBg"></div>
+        <div class="overlay"></div>
+        <div class="hero-inner">
+          <div>
+            <div class="chip">BuBe.co <span style="height: 4px; width: 4px; border-radius: 99px; background: rgb(var(--gold-1)); display: inline-block;"></span> Premium Womenswear</div>
+            <h1 class="h1" style="margin-top: 18px;">
+              BuBe.co –<br />
+              <span style="color: rgb(var(--gold-1));">Elegance</span> in Every Style
+            </h1>
+            <p class="muted" style="margin-top: 16px; line-height: 1.75; max-width: 52ch;">
+              Koleksi fashion wanita modern yang feminin, anggun, dan nyaman. Dari tunik hingga dress—dipilih untuk menemani hari biasa dan momen istimewa.
+            </p>
+            <div style="margin-top: 18px; display: flex; gap: 10px; flex-wrap: wrap;">
+              <a class="btn primary" href="./shop.html">Belanja Sekarang</a>
+              <a class="btn" href="./shop.html#kategori">Lihat Kategori</a>
+            </div>
+            <div class="kpi" style="margin-top: 18px;">
+              <div class="box">
+                <div class="k">Bahan</div>
+                <div class="v">Premium</div>
+              </div>
+              <div class="box">
+                <div class="k">Style</div>
+                <div class="v">Modern</div>
+              </div>
+              <div class="box">
+                <div class="k">Nuansa</div>
+                <div class="v">Elegan</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="card" style="border-radius: 26px; overflow: hidden; box-shadow: var(--glow);">
+            <div style="position: relative; aspect-ratio: 4/5; overflow: hidden;">
+              <img
+                alt="BuBe.co editorial"
+                loading="eager"
+                src="https://coresg-normal.trae.ai/api/ide/v1/text_to_image?prompt=editorial%20fashion%20campaign%20photo%2C%20modern%20elegant%20woman%20wearing%20beige%20and%20cream%20outfit%2C%20subtle%20soft%20pink%20accent%2C%20luxury%20minimal%20studio%2C%20premium%20womenswear%2C%20soft%20natural%20light%2C%20high%20detail%2C%20realistic&image_size=portrait_4_3"
+                style="width: 100%; height: 100%; object-fit: cover; display: block;"
+              />
+              <div style="position: absolute; inset: 0; background: linear-gradient(to top, rgba(0, 0, 0, 0.45), transparent, transparent);"></div>
+              <div style="position: absolute; left: 18px; right: 18px; bottom: 18px;">
+                <div class="eyebrow" style="color: rgba(255, 255, 255, 0.74);">CURATED LOOK</div>
+                <div class="h3" style="margin-top: 8px; color: #fff;">Anggun, berkelas, effortless</div>
+                <div style="margin-top: 8px; color: rgba(255, 255, 255, 0.80); font-size: 14px; line-height: 1.6;">Outfit yang terlihat mahal tanpa terasa berlebihan.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div style="display: flex; align-items: end; justify-content: space-between; gap: 14px; flex-wrap: wrap;">
+          <div>
+            <div class="eyebrow">KOLEKSI TERBARU</div>
+            <h2 class="h2" style="margin-top: 10px;">New arrivals yang halus dan berkelas</h2>
+          </div>
+          <a class="btn" href="./shop.html?sort=terbaru">Lihat Semua</a>
+        </div>
+        <div class="grid cols-4" id="newestGrid" style="margin-top: 16px;"></div>
+      </section>
+
+      <section class="section">
+        <div style="display: flex; align-items: end; justify-content: space-between; gap: 14px; flex-wrap: wrap;">
+          <div>
+            <div class="eyebrow">PRODUK TERLARIS</div>
+            <h2 class="h2" style="margin-top: 10px;">Best sellers pilihan pelanggan</h2>
+          </div>
+          <a class="btn" href="./shop.html?sort=terlaris">Lihat Semua</a>
+        </div>
+        <div class="grid cols-4" id="bestGrid" style="margin-top: 16px;"></div>
+      </section>
+
+      <section class="section" id="kategori">
+        <div style="display: flex; align-items: end; justify-content: space-between; gap: 14px; flex-wrap: wrap;">
+          <div>
+            <div class="eyebrow">KATEGORI</div>
+            <h2 class="h2" style="margin-top: 10px;">Temukan gaya yang paling kamu suka</h2>
+          </div>
+          <a class="btn" href="./shop.html">Semua Kategori</a>
+        </div>
+        <div class="grid cols-3" id="categoryGrid" style="margin-top: 16px;"></div>
+      </section>
+
+      <section class="section">
+        <div style="display: flex; align-items: end; justify-content: space-between; gap: 14px; flex-wrap: wrap;">
+          <div>
+            <div class="eyebrow">TESTIMONI</div>
+            <h2 class="h2" style="margin-top: 10px;">Dipercaya oleh ribuan wanita</h2>
+          </div>
+          <div class="muted" style="max-width: 48ch;">Nuansa feminin yang berkelas, dibuat untuk dipakai berulang kali—bukan untuk satu momen saja.</div>
+        </div>
+        <div class="grid cols-3" style="margin-top: 16px;">
+          <div class="card pad">
+            <div style="line-height: 1.7; color: rgb(var(--ink-2));">“Cutting-nya rapi banget, bahan adem, dan terasa premium. Dipakai kerja nyaman, dipakai acara juga masuk.”</div>
+            <div class="muted" style="margin-top: 14px; font-size: 12px; font-weight: 800; letter-spacing: 0.06em;">Nadya · Makassar</div>
+          </div>
+          <div class="card pad">
+            <div style="line-height: 1.7; color: rgb(var(--ink-2));">“Warnanya soft dan elegan, sesuai foto. Aku suka detail kecilnya yang bikin kelihatan mahal.”</div>
+            <div class="muted" style="margin-top: 14px; font-size: 12px; font-weight: 800; letter-spacing: 0.06em;">Alya · Jakarta</div>
+          </div>
+          <div class="card pad">
+            <div style="line-height: 1.7; color: rgb(var(--ink-2));">“Packing aman, pengiriman cepat, dan ukurannya pas. Repeat order untuk koleksi berikutnya.”</div>
+            <div class="muted" style="margin-top: 14px; font-size: 12px; font-weight: 800; letter-spacing: 0.06em;">Salsa · Bandung</div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div style="display: flex; align-items: end; justify-content: space-between; gap: 14px; flex-wrap: wrap;">
+          <div>
+            <div class="eyebrow">INSTAGRAM</div>
+            <h2 class="h2" style="margin-top: 10px;">Moodboard BuBe.co</h2>
+          </div>
+          <a class="btn" href="./blog.html">Lihat Blog</a>
+        </div>
+        <div class="grid cols-3" id="instagramGrid" style="margin-top: 16px;"></div>
+      </section>
+    </main>
+
+    <div data-slot="footer"></div>
+    <div data-slot="fab"></div>
+
+    <script src="./assets/js/env.js"></script>
+    <script type="module">
+      import { boot, bubecoImage } from "./assets/js/app.js";
+      window.addEventListener("DOMContentLoaded", () => {
+        boot();
+        const bg = document.getElementById("heroBg");
+        if (bg) bg.style.backgroundImage = `url(${bubecoImage("high-end fashion campaign background, abstract soft beige cream gradient mesh with subtle grain, premium luxurious feel, minimal, realistic texture", "landscape_16_9")})`;
+      });
+    </script>
+  </body>
+</html>
+

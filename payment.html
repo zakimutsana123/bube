@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Pembayaran · BuBe.co</title>
+    <meta name="description" content="Instruksi pembayaran dan tracking pesanan BuBe.co." />
+    <link rel="stylesheet" href="./assets/css/styles.css" />
+  </head>
+  <body data-page="payment">
+    <div data-slot="header"></div>
+
+    <main class="container" style="padding: 22px 16px 0;">
+      <div class="section" style="padding-top: 0;">
+        <div class="eyebrow">PEMBAYARAN</div>
+        <h1 class="h2" style="margin-top: 10px;">Instruksi Pembayaran</h1>
+        <p class="muted" style="margin-top: 10px; max-width: 70ch; line-height: 1.75;">
+          Terima kasih. Pesanan kamu sudah dibuat (simulasi). Ikuti instruksi pembayaran sesuai metode yang dipilih saat checkout.
+        </p>
+      </div>
+
+      <div id="payRoot" class="grid" style="margin-top: 16px; grid-template-columns: 1fr; gap: 16px;">
+        <section class="card pad">
+          <div style="display:flex; justify-content:space-between; gap: 12px; flex-wrap:wrap; align-items: baseline;">
+            <div>
+              <div class="muted" style="font-size: 12px; font-weight: 900; letter-spacing: 0.18em;">ORDER ID</div>
+              <div style="margin-top: 10px; font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace; font-size: 14px;" id="orderId"></div>
+            </div>
+            <div style="display:flex; gap: 10px; flex-wrap:wrap;">
+              <button class="btn" type="button" id="invoiceBtn">Unduh Invoice (Print → Save PDF)</button>
+              <a class="btn primary" href="./account.html#tab=orders">Riwayat Pesanan</a>
+            </div>
+          </div>
+
+          <div class="grid cols-2" style="margin-top: 16px;">
+            <div class="card pad">
+              <div style="font-weight: 900;">Status</div>
+              <div class="muted" style="margin-top: 10px;">Order: <b style="color: rgb(var(--ink-1));" id="orderStatus"></b></div>
+              <div class="muted" style="margin-top: 8px;">Metode bayar: <b style="color: rgb(var(--ink-1));" id="payMethod"></b></div>
+            </div>
+            <div class="card pad">
+              <div style="font-weight: 900;">Pengiriman</div>
+              <div class="muted" style="margin-top: 10px;">Kurir: <b style="color: rgb(var(--ink-1));" id="shipCourier"></b></div>
+              <div class="muted" style="margin-top: 8px;">Ongkir: <b style="color: rgb(var(--ink-1));" id="shipCost"></b></div>
+              <div class="muted" style="margin-top: 8px;">Resi: <b style="color: rgb(var(--ink-1));" id="trackNo"></b></div>
+            </div>
+          </div>
+
+          <div style="margin-top: 16px;">
+            <div style="font-weight: 900;">Item</div>
+            <div class="grid cols-2" id="payItems" style="margin-top: 12px;"></div>
+          </div>
+        </section>
+
+        <aside class="card pad">
+          <div style="font-weight: 900;">Ringkasan</div>
+          <div style="margin-top: 12px; display:flex; justify-content:space-between; color: rgb(var(--ink-2));">
+            <span>Subtotal</span>
+            <span style="font-weight: 900;" id="paySubtotal">Rp 0</span>
+          </div>
+          <div style="margin-top: 8px; display:flex; justify-content:space-between; color: rgb(var(--ink-2));">
+            <span>Diskon</span>
+            <span style="font-weight: 900;" id="payDiscount">Rp 0</span>
+          </div>
+          <div style="margin-top: 8px; display:flex; justify-content:space-between; color: rgb(var(--ink-2));">
+            <span>Ongkir</span>
+            <span style="font-weight: 900;" id="shipCost2">Rp 0</span>
+          </div>
+          <div style="margin-top: 14px; border-top: 1px solid rgba(var(--gold-1),0.10); padding-top: 14px; display:flex; justify-content:space-between; color: rgb(var(--ink-2));">
+            <span>Total</span>
+            <span style="font-weight: 900;" id="payTotal">Rp 0</span>
+          </div>
+          <div class="card pad" style="margin-top: 16px;">
+            <div style="font-weight: 900;">Langkah selanjutnya</div>
+            <ol style="margin: 10px 0 0; padding-left: 18px; color: rgb(var(--ink-2)); line-height: 1.8;">
+              <li>Selesaikan pembayaran sesuai metode yang dipilih.</li>
+              <li>Tunggu verifikasi pembayaran.</li>
+              <li>Setelah diproses, nomor resi akan muncul di sini (admin bisa mengisi lewat halaman Admin).</li>
+            </ol>
+          </div>
+          <a class="btn" href="./admin.html" style="margin-top: 12px; width:100%;">Admin (set resi)</a>
+        </aside>
+      </div>
+    </main>
+
+    <div data-slot="footer"></div>
+    <div data-slot="fab"></div>
+
+    <script src="./assets/js/env.js"></script>
+    <script type="module">
+      import "./assets/js/app.js";
+      window.addEventListener("DOMContentLoaded", () => {
+        const shipCost = document.getElementById("shipCost");
+        const shipCost2 = document.getElementById("shipCost2");
+        if (shipCost && shipCost2) shipCost2.textContent = shipCost.textContent || "";
+      });
+    </script>
+  </body>
+</html>
+

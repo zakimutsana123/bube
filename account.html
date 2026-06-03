@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Akun · BuBe.co</title>
+    <meta name="description" content="Akun pelanggan BuBe.co: login, registrasi, wishlist, dan riwayat pesanan." />
+    <link rel="stylesheet" href="./assets/css/styles.css" />
+  </head>
+  <body data-page="account">
+    <div data-slot="header"></div>
+
+    <main class="container" style="padding: 22px 16px 0;">
+      <div class="section" style="padding-top: 0;">
+        <div class="eyebrow">AKUN PELANGGAN</div>
+        <h1 class="h2" style="margin-top: 10px;">Akun BuBe.co</h1>
+        <p class="muted" style="margin-top: 10px;">Login untuk melihat wishlist, riwayat pesanan, dan tracking.</p>
+      </div>
+
+      <div class="section">
+        <div id="accountTabs" style="display:flex; gap: 10px; flex-wrap:wrap;"></div>
+      </div>
+
+      <div class="section">
+        <div data-tab="login" class="card pad" style="max-width: 520px;">
+          <div style="font-weight:900;">Login</div>
+          <form id="loginForm" style="margin-top: 12px; display:grid; gap: 10px;">
+            <input id="loginEmail" type="email" required placeholder="Email" style="height: 44px; border-radius: 14px; border: 1px solid rgba(var(--gold-1),0.16); background: rgba(var(--surface-1),0.75); padding: 0 12px; outline: 0; color: rgb(var(--ink-1));" />
+            <input id="loginPassword" type="password" required placeholder="Password" style="height: 44px; border-radius: 14px; border: 1px solid rgba(var(--gold-1),0.16); background: rgba(var(--surface-1),0.75); padding: 0 12px; outline: 0; color: rgb(var(--ink-1));" />
+            <div class="muted" id="loginErr" style="font-size: 12px;"></div>
+            <button class="btn primary" type="submit">Masuk</button>
+            <div class="muted" style="font-size: 12px; line-height:1.7;">
+              Admin demo: <b>admin@bubeco.co</b> / <b>Admin1234</b>
+            </div>
+          </form>
+        </div>
+
+        <div data-tab="register" class="card pad" style="max-width: 520px;">
+          <div style="font-weight:900;">Registrasi</div>
+          <form id="registerForm" style="margin-top: 12px; display:grid; gap: 10px;">
+            <input id="regName" required placeholder="Nama" style="height: 44px; border-radius: 14px; border: 1px solid rgba(var(--gold-1),0.16); background: rgba(var(--surface-1),0.75); padding: 0 12px; outline: 0; color: rgb(var(--ink-1));" />
+            <input id="regEmail" type="email" required placeholder="Email" style="height: 44px; border-radius: 14px; border: 1px solid rgba(var(--gold-1),0.16); background: rgba(var(--surface-1),0.75); padding: 0 12px; outline: 0; color: rgb(var(--ink-1));" />
+            <input id="regPassword" type="password" required placeholder="Password (min 8 karakter)" style="height: 44px; border-radius: 14px; border: 1px solid rgba(var(--gold-1),0.16); background: rgba(var(--surface-1),0.75); padding: 0 12px; outline: 0; color: rgb(var(--ink-1));" />
+            <div class="muted" id="registerErr" style="font-size: 12px;"></div>
+            <button class="btn primary" type="submit">Buat Akun</button>
+          </form>
+        </div>
+
+        <div data-tab="profile" id="profileBox"></div>
+
+        <div data-tab="wishlist" class="card pad">
+          <div style="display:flex; justify-content:space-between; gap: 12px; flex-wrap:wrap; align-items:baseline;">
+            <div>
+              <div class="eyebrow">WISHLIST</div>
+              <div class="h3" style="margin-top: 10px;">Produk favorit kamu</div>
+            </div>
+            <a class="btn" href="./shop.html">Ke Shop</a>
+          </div>
+          <div class="grid cols-3" id="wishlistGrid" style="margin-top: 16px;"></div>
+        </div>
+
+        <div data-tab="orders" class="card pad">
+          <div style="display:flex; justify-content:space-between; gap: 12px; flex-wrap:wrap; align-items:baseline;">
+            <div>
+              <div class="eyebrow">RIWAYAT PESANAN</div>
+              <div class="h3" style="margin-top: 10px;">Tracking & invoice</div>
+            </div>
+            <a class="btn primary" href="./shop.html">Belanja Lagi</a>
+          </div>
+          <div id="ordersList" class="grid" style="margin-top: 16px;"></div>
+        </div>
+      </div>
+    </main>
+
+    <div data-slot="footer"></div>
+    <div data-slot="fab"></div>
+
+    <script src="./assets/js/env.js"></script>
+    <script type="module" src="./assets/js/app.js"></script>
+  </body>
+</html>
+

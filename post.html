@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Artikel · BuBe.co</title>
+    <meta name="description" content="Artikel blog BuBe.co." />
+    <link rel="stylesheet" href="./assets/css/styles.css" />
+  </head>
+  <body data-page="post">
+    <div data-slot="header"></div>
+
+    <main class="container" style="padding: 22px 16px 0;">
+      <div id="postRoot">
+        <div class="muted" style="font-size: 12px;">
+          <a href="./index.html">Home</a> / <a href="./blog.html">Blog</a> / <span id="postTitleMini"></span>
+        </div>
+
+        <article class="card" style="margin-top: 14px; overflow:hidden; border-radius: 22px;">
+          <div style="position: relative; aspect-ratio: 16/9;" id="postCover"></div>
+          <div style="position: relative; padding: 18px;">
+            <div class="eyebrow" id="postDate"></div>
+            <h1 class="h2" id="postTitle" style="margin-top: 10px;"></h1>
+            <p class="muted" id="postExcerpt" style="margin-top: 10px; line-height: 1.75;"></p>
+            <div id="postTags" style="margin-top: 12px; display:flex; gap: 8px; flex-wrap:wrap;"></div>
+            <div class="prose" id="postContent" style="margin-top: 18px;"></div>
+          </div>
+        </article>
+      </div>
+    </main>
+
+    <div data-slot="footer"></div>
+    <div data-slot="fab"></div>
+
+    <script src="./assets/js/env.js"></script>
+    <script type="module">
+      import "./assets/js/app.js";
+      window.addEventListener("DOMContentLoaded", () => {
+        const title = document.getElementById("postTitle");
+        const mini = document.getElementById("postTitleMini");
+        if (title && mini) mini.textContent = title.textContent || "";
+      });
+    </script>
+  </body>
+</html>
+

@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Checkout · BuBe.co</title>
+    <meta name="description" content="Checkout BuBe.co: alamat, pengiriman, metode pembayaran, voucher, dan ringkasan pesanan." />
+    <link rel="stylesheet" href="./assets/css/styles.css" />
+  </head>
+  <body data-page="checkout">
+    <div data-slot="header"></div>
+
+    <main class="container" style="padding: 22px 16px 0;">
+      <div class="section" style="padding-top: 0;">
+        <div class="eyebrow">CHECKOUT</div>
+        <h1 class="h2" style="margin-top: 10px;">Checkout</h1>
+        <p class="muted" style="margin-top: 10px;">Lengkapi data untuk memproses pesananmu (simulasi).</p>
+      </div>
+
+      <div id="checkoutRoot" class="grid" style="margin-top: 16px; grid-template-columns: 1fr; gap: 16px;">
+        <section class="card pad">
+          <div style="font-weight: 900;">Data Pengiriman</div>
+          <form id="checkoutForm" style="margin-top: 14px; display:grid; gap: 10px;">
+            <div class="grid cols-2">
+              <input id="fullName" placeholder="Nama lengkap" required style="height: 44px; border-radius: 14px; border: 1px solid rgba(var(--gold-1),0.16); background: rgba(var(--surface-1),0.75); padding: 0 12px; outline: 0; color: rgb(var(--ink-1));" />
+              <input id="phone" placeholder="No. WhatsApp" required style="height: 44px; border-radius: 14px; border: 1px solid rgba(var(--gold-1),0.16); background: rgba(var(--surface-1),0.75); padding: 0 12px; outline: 0; color: rgb(var(--ink-1));" />
+            </div>
+            <textarea id="address" placeholder="Alamat lengkap" required style="min-height: 96px; border-radius: 14px; border: 1px solid rgba(var(--gold-1),0.16); background: rgba(var(--surface-1),0.75); padding: 10px 12px; outline: 0; color: rgb(var(--ink-1));"></textarea>
+            <div class="grid cols-2">
+              <input id="city" placeholder="Kota" required style="height: 44px; border-radius: 14px; border: 1px solid rgba(var(--gold-1),0.16); background: rgba(var(--surface-1),0.75); padding: 0 12px; outline: 0; color: rgb(var(--ink-1));" />
+              <input id="postal" placeholder="Kode pos" style="height: 44px; border-radius: 14px; border: 1px solid rgba(var(--gold-1),0.16); background: rgba(var(--surface-1),0.75); padding: 0 12px; outline: 0; color: rgb(var(--ink-1));" />
+            </div>
+
+            <div class="grid cols-2">
+              <div>
+                <div class="muted" style="font-size: 12px; font-weight: 900; letter-spacing: 0.12em;">PENGIRIMAN</div>
+                <select id="courier" style="margin-top: 10px; width: 100%; height: 44px; border-radius: 14px; border: 1px solid rgba(var(--gold-1),0.16); background: rgba(var(--surface-1),0.75); padding: 0 12px; outline: 0; color: rgb(var(--ink-1));">
+                  <option>JNE</option>
+                  <option>J&T</option>
+                  <option>SiCepat</option>
+                  <option>AnterAja</option>
+                  <option>Ninja Express</option>
+                  <option>POS Indonesia</option>
+                </select>
+              </div>
+              <div>
+                <div class="muted" style="font-size: 12px; font-weight: 900; letter-spacing: 0.12em;">PEMBAYARAN</div>
+                <select id="payment" style="margin-top: 10px; width: 100%; height: 44px; border-radius: 14px; border: 1px solid rgba(var(--gold-1),0.16); background: rgba(var(--surface-1),0.75); padding: 0 12px; outline: 0; color: rgb(var(--ink-1));">
+                  <option>QRIS</option>
+                  <option>Transfer BCA</option>
+                  <option>Transfer Mandiri</option>
+                  <option>Transfer BRI</option>
+                  <option>Transfer BNI</option>
+                  <option>Virtual Account</option>
+                  <option>DANA</option>
+                  <option>OVO</option>
+                  <option>GoPay</option>
+                  <option>ShopeePay</option>
+                  <option>Kartu Kredit/Debit</option>
+                </select>
+              </div>
+            </div>
+
+            <div>
+              <div class="muted" style="font-size: 12px; font-weight: 900; letter-spacing: 0.12em;">VOUCHER</div>
+              <input id="voucher" placeholder="Kode voucher (coba: BUBE10)" style="margin-top: 10px; width: 100%; height: 44px; border-radius: 14px; border: 1px solid rgba(var(--gold-1),0.16); background: rgba(var(--surface-1),0.75); padding: 0 12px; outline: 0; color: rgb(var(--ink-1));" />
+            </div>
+
+            <div class="muted" id="checkoutErr" style="font-size: 12px;"></div>
+            <button class="btn primary" type="submit" style="width: 100%;">Buat Pesanan</button>
+          </form>
+        </section>
+
+        <aside class="card pad">
+          <div style="font-weight: 900;">Ringkasan Pesanan</div>
+          <div style="margin-top: 12px; display:flex; justify-content:space-between; color: rgb(var(--ink-2));">
+            <span>Subtotal</span>
+            <span style="font-weight: 900;" id="sumSubtotal">Rp 0</span>
+          </div>
+          <div style="margin-top: 8px; display:flex; justify-content:space-between; color: rgb(var(--ink-2));">
+            <span>Ongkir (estimasi)</span>
+            <span style="font-weight: 900;" id="sumShipping">Rp 0</span>
+          </div>
+          <div style="margin-top: 14px; border-top: 1px solid rgba(var(--gold-1),0.10); padding-top: 14px; display:flex; justify-content:space-between; color: rgb(var(--ink-2));">
+            <span>Total</span>
+            <span style="font-weight: 900;" id="sumTotal">Rp 0</span>
+          </div>
+          <div class="muted" style="margin-top: 12px; font-size: 12px; line-height: 1.7;">
+            Setelah “Buat Pesanan”, kamu akan diarahkan ke halaman pembayaran + tracking.
+          </div>
+        </aside>
+      </div>
+    </main>
+
+    <div data-slot="footer"></div>
+    <div data-slot="fab"></div>
+
+    <script src="./assets/js/env.js"></script>
+    <script type="module" src="./assets/js/app.js"></script>
+  </body>
+</html>
+

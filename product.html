@@ -1,0 +1,171 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Produk · BuBe.co</title>
+    <meta name="description" content="Detail produk BuBe.co: foto HD, size chart, varian ukuran & warna, review, dan produk terkait." />
+    <link rel="stylesheet" href="./assets/css/styles.css" />
+  </head>
+  <body data-page="product">
+    <div data-slot="header"></div>
+
+    <main class="container" style="padding: 22px 16px 0;">
+      <div id="productRoot">
+        <div class="split" style="margin-top: 12px;">
+          <section class="grid" style="gap: 12px;">
+            <div class="card" style="overflow:hidden; border-radius: 22px; aspect-ratio: 3/4; cursor: zoom-in;" id="galleryMain"></div>
+            <div class="grid cols-4" id="galleryThumbs"></div>
+            <div class="muted" style="font-size: 12px;">Klik gambar utama untuk zoom.</div>
+          </section>
+
+          <section class="grid" style="gap: 12px;">
+            <div class="card pad">
+              <div class="eyebrow">DETAIL PRODUK</div>
+              <h1 class="h2" id="productName" style="margin-top: 10px;"></h1>
+              <div style="margin-top: 12px; display:flex; align-items:baseline; gap: 10px; flex-wrap:wrap;">
+                <div style="font-weight: 900; font-size: 20px;" id="productPrice"></div>
+                <div class="muted" style="text-decoration: line-through;" id="productStrike"></div>
+              </div>
+              <p class="muted" style="margin-top: 12px; line-height: 1.75;" id="productDesc"></p>
+
+              <div style="margin-top: 16px;">
+                <div style="font-weight: 900;">Ukuran</div>
+                <div style="margin-top: 10px; display:flex; gap: 8px; flex-wrap:wrap;" id="sizeWrap"></div>
+              </div>
+
+              <div style="margin-top: 16px;">
+                <div style="font-weight: 900;">Warna</div>
+                <div style="margin-top: 10px; display:flex; gap: 8px; flex-wrap:wrap;" id="colorWrap"></div>
+              </div>
+
+              <div class="card pad" style="margin-top: 16px;">
+                <div style="display:flex; justify-content:space-between; gap: 10px; flex-wrap:wrap;">
+                  <div>
+                    <div style="font-weight: 900;">Stok</div>
+                    <div class="muted" style="margin-top: 6px; font-size: 12px;" id="stockText"></div>
+                  </div>
+                  <div style="display:flex; gap: 10px; align-items:center;">
+                    <button class="btn" type="button" id="qtyDec">−</button>
+                    <div style="min-width: 40px; text-align:center; font-weight:900;" id="qtyText">1</div>
+                    <button class="btn" type="button" id="qtyInc">+</button>
+                  </div>
+                </div>
+              </div>
+
+              <div style="margin-top: 14px; display:grid; gap: 10px;">
+                <button class="btn primary" type="button" id="addToCart">Tambah ke Keranjang</button>
+                <button class="btn" type="button" id="buyNow">Beli Sekarang</button>
+                <button class="btn" type="button" id="toggleWish">Tambah ke Wishlist</button>
+              </div>
+
+              <div class="card pad" style="margin-top: 16px;">
+                <div style="font-weight: 900;">Size Chart (cm)</div>
+                <div style="margin-top: 10px; overflow-x:auto;">
+                  <table style="width:100%; border-collapse: collapse; font-size: 14px;">
+                    <thead>
+                      <tr style="text-align:left; color: rgb(var(--ink-3)); font-size: 12px; letter-spacing: 0.12em;">
+                        <th style="padding: 10px 8px; border-bottom: 1px solid rgba(var(--gold-1),0.14);">Ukuran</th>
+                        <th style="padding: 10px 8px; border-bottom: 1px solid rgba(var(--gold-1),0.14);">Bahu/Dada</th>
+                        <th style="padding: 10px 8px; border-bottom: 1px solid rgba(var(--gold-1),0.14);">Pinggang</th>
+                        <th style="padding: 10px 8px; border-bottom: 1px solid rgba(var(--gold-1),0.14);">Pinggul</th>
+                      </tr>
+                    </thead>
+                    <tbody style="color: rgb(var(--ink-2));">
+                      <tr>
+                        <td style="padding: 10px 8px; border-bottom: 1px solid rgba(var(--gold-1),0.10); font-weight: 900;">S</td>
+                        <td style="padding: 10px 8px; border-bottom: 1px solid rgba(var(--gold-1),0.10);">86–90</td>
+                        <td style="padding: 10px 8px; border-bottom: 1px solid rgba(var(--gold-1),0.10);">68–72</td>
+                        <td style="padding: 10px 8px; border-bottom: 1px solid rgba(var(--gold-1),0.10);">90–94</td>
+                      </tr>
+                      <tr>
+                        <td style="padding: 10px 8px; border-bottom: 1px solid rgba(var(--gold-1),0.10); font-weight: 900;">M</td>
+                        <td style="padding: 10px 8px; border-bottom: 1px solid rgba(var(--gold-1),0.10);">90–94</td>
+                        <td style="padding: 10px 8px; border-bottom: 1px solid rgba(var(--gold-1),0.10);">72–76</td>
+                        <td style="padding: 10px 8px; border-bottom: 1px solid rgba(var(--gold-1),0.10);">94–98</td>
+                      </tr>
+                      <tr>
+                        <td style="padding: 10px 8px; border-bottom: 1px solid rgba(var(--gold-1),0.10); font-weight: 900;">L</td>
+                        <td style="padding: 10px 8px; border-bottom: 1px solid rgba(var(--gold-1),0.10);">94–98</td>
+                        <td style="padding: 10px 8px; border-bottom: 1px solid rgba(var(--gold-1),0.10);">76–80</td>
+                        <td style="padding: 10px 8px; border-bottom: 1px solid rgba(var(--gold-1),0.10);">98–102</td>
+                      </tr>
+                      <tr>
+                        <td style="padding: 10px 8px; border-bottom: 1px solid rgba(var(--gold-1),0.10); font-weight: 900;">XL</td>
+                        <td style="padding: 10px 8px; border-bottom: 1px solid rgba(var(--gold-1),0.10);">98–104</td>
+                        <td style="padding: 10px 8px; border-bottom: 1px solid rgba(var(--gold-1),0.10);">80–86</td>
+                        <td style="padding: 10px 8px; border-bottom: 1px solid rgba(var(--gold-1),0.10);">102–108</td>
+                      </tr>
+                      <tr>
+                        <td style="padding: 10px 8px; border-bottom: 1px solid rgba(var(--gold-1),0.10); font-weight: 900;">XXL</td>
+                        <td style="padding: 10px 8px; border-bottom: 1px solid rgba(var(--gold-1),0.10);">104–110</td>
+                        <td style="padding: 10px 8px; border-bottom: 1px solid rgba(var(--gold-1),0.10);">86–92</td>
+                        <td style="padding: 10px 8px; border-bottom: 1px solid rgba(var(--gold-1),0.10);">108–114</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+                <div class="muted" style="margin-top: 10px; font-size: 12px;">Tips: jika ragu di antara dua ukuran, pilih ukuran lebih besar untuk kenyamanan.</div>
+              </div>
+            </div>
+          </section>
+        </div>
+
+        <section class="section">
+          <div class="eyebrow">REVIEW</div>
+          <h2 class="h2" style="margin-top: 10px;">Apa kata pelanggan</h2>
+          <div class="grid cols-2" id="reviewList" style="margin-top: 16px;"></div>
+
+          <div class="card pad" style="margin-top: 16px;">
+            <div style="font-weight: 900;">Tulis review (simulasi)</div>
+            <form id="reviewForm" style="margin-top: 12px; display:grid; gap: 10px;">
+              <select id="reviewRating" style="height: 44px; border-radius: 14px; border: 1px solid rgba(var(--gold-1),0.16); background: rgba(var(--surface-1),0.75); padding: 0 12px; outline: 0; color: rgb(var(--ink-1));">
+                <option value="5">5</option>
+                <option value="4">4</option>
+                <option value="3">3</option>
+                <option value="2">2</option>
+                <option value="1">1</option>
+              </select>
+              <input id="reviewTitle" placeholder="Judul (opsional)" style="height: 44px; border-radius: 14px; border: 1px solid rgba(var(--gold-1),0.16); background: rgba(var(--surface-1),0.75); padding: 0 12px; outline: 0; color: rgb(var(--ink-1));" />
+              <textarea id="reviewContent" placeholder="Tulis pengalaman kamu..." required style="min-height: 110px; border-radius: 14px; border: 1px solid rgba(var(--gold-1),0.16); background: rgba(var(--surface-1),0.75); padding: 10px 12px; outline: 0; color: rgb(var(--ink-1));"></textarea>
+              <button class="btn primary" type="submit">Kirim Review</button>
+              <div class="muted" id="reviewMsg" style="font-size: 12px;"></div>
+            </form>
+          </div>
+        </section>
+
+        <section class="section">
+          <div style="display: flex; align-items: end; justify-content: space-between; gap: 14px; flex-wrap: wrap;">
+            <div>
+              <div class="eyebrow">PRODUK TERKAIT</div>
+              <h2 class="h2" style="margin-top: 10px;">Pilihan lain yang sejalan</h2>
+            </div>
+            <a class="btn" href="./shop.html">Ke Shop</a>
+          </div>
+          <div class="grid cols-4" id="relatedGrid" style="margin-top: 16px;"></div>
+        </section>
+      </div>
+    </main>
+
+    <div class="modal" id="zoomModal" aria-modal="true" role="dialog">
+      <div class="modal-card">
+        <div class="modal-head">
+          <div class="muted" style="font-size: 12px; font-weight: 800; letter-spacing: 0.12em;">ZOOM</div>
+          <button class="modal-close" type="button" data-close="modal" aria-label="Tutup">×</button>
+        </div>
+        <div class="modal-body">
+          <div class="card" style="border-radius: 18px; overflow: hidden; aspect-ratio: 16/10;">
+            <img id="zoomImg" alt="Zoom" style="width:100%; height:100%; object-fit: contain; display:block; background: rgba(0,0,0,0.04);" />
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div data-slot="footer"></div>
+    <div data-slot="fab"></div>
+
+    <script src="./assets/js/env.js"></script>
+    <script type="module" src="./assets/js/app.js"></script>
+  </body>
+</html>
+

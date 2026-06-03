@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Kontak · BuBe.co</title>
+    <meta name="description" content="Kontak BuBe.co via WhatsApp, email, form kontak, dan Google Maps." />
+    <link rel="stylesheet" href="./assets/css/styles.css" />
+  </head>
+  <body>
+    <div data-slot="header"></div>
+
+    <main class="container" style="padding: 22px 16px 0;">
+      <div class="section" style="padding-top: 0;">
+        <div class="eyebrow">KONTAK</div>
+        <h1 class="h2" style="margin-top: 10px;">Hubungi BuBe.co</h1>
+        <p class="muted" style="margin-top: 10px; max-width: 70ch; line-height: 1.75;">
+          Kami siap membantu. Kirim pesan lewat WhatsApp, email, atau gunakan form kontak.
+        </p>
+      </div>
+
+      <div class="split" style="margin-top: 16px;">
+        <section class="grid" style="gap: 12px;">
+          <div class="card pad">
+            <div style="font-weight: 900;">Kontak cepat</div>
+            <div class="grid" style="margin-top: 12px; gap: 10px;">
+              <a class="card pad" href="https://wa.me/6281234567890?text=Halo%20BuBe.co%2C%20saya%20mau%20tanya%20produk." target="_blank" rel="noreferrer">
+                <div style="display:flex; justify-content:space-between; gap: 10px; flex-wrap:wrap;">
+                  <span style="font-weight:900;">WhatsApp</span>
+                  <span class="muted">Chat sekarang</span>
+                </div>
+              </a>
+              <a class="card pad" href="mailto:hello@bubeco.co">
+                <div style="display:flex; justify-content:space-between; gap: 10px; flex-wrap:wrap;">
+                  <span style="font-weight:900;">Email</span>
+                  <span class="muted">hello@bubeco.co</span>
+                </div>
+              </a>
+              <a class="card pad" href="./blog.html">
+                <div style="display:flex; justify-content:space-between; gap: 10px; flex-wrap:wrap;">
+                  <span style="font-weight:900;">Blog</span>
+                  <span class="muted">Tips & inspirasi</span>
+                </div>
+              </a>
+            </div>
+          </div>
+
+          <div class="card pad">
+            <div style="font-weight: 900;">Form Kontak (simulasi)</div>
+            <form id="contactForm" style="margin-top: 12px; display:grid; gap: 10px;">
+              <input required placeholder="Nama" style="height: 44px; border-radius: 14px; border: 1px solid rgba(var(--gold-1),0.16); background: rgba(var(--surface-1),0.75); padding: 0 12px; outline: 0; color: rgb(var(--ink-1));" />
+              <input required type="email" placeholder="Email" style="height: 44px; border-radius: 14px; border: 1px solid rgba(var(--gold-1),0.16); background: rgba(var(--surface-1),0.75); padding: 0 12px; outline: 0; color: rgb(var(--ink-1));" />
+              <textarea required placeholder="Pesan" style="min-height: 120px; border-radius: 14px; border: 1px solid rgba(var(--gold-1),0.16); background: rgba(var(--surface-1),0.75); padding: 10px 12px; outline: 0; color: rgb(var(--ink-1));"></textarea>
+              <button class="btn primary" type="submit">Kirim Pesan</button>
+              <div class="muted" id="contactMsg" style="font-size: 12px;"></div>
+            </form>
+          </div>
+        </section>
+
+        <aside class="card" style="border-radius: 22px; overflow:hidden;">
+          <div class="card pad" style="border: 0; border-radius: 0;">
+            <div style="font-weight: 900;">Lokasi</div>
+            <p class="muted" style="margin-top: 10px; line-height: 1.75;">Pin lokasi bisa disesuaikan sesuai alamat toko/warehouse BuBe.co.</p>
+          </div>
+          <div style="position: relative; aspect-ratio: 4/3;">
+            <iframe
+              title="Google Maps"
+              src="https://www.google.com/maps?q=Makassar&output=embed"
+              style="position:absolute; inset:0; height:100%; width:100%; border:0;"
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+            ></iframe>
+          </div>
+        </aside>
+      </div>
+    </main>
+
+    <div data-slot="footer"></div>
+    <div data-slot="fab"></div>
+
+    <script src="./assets/js/env.js"></script>
+    <script type="module">
+      import "./assets/js/app.js";
+      window.addEventListener("DOMContentLoaded", () => {
+        const form = document.getElementById("contactForm");
+        const msg = document.getElementById("contactMsg");
+        if (form) {
+          form.addEventListener("submit", (e) => {
+            e.preventDefault();
+            if (msg) msg.textContent = "Terima kasih. Pesan kamu sudah terkirim (simulasi).";
+            form.reset();
+          });
+        }
+      });
+    </script>
+  </body>
+</html>
+

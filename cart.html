@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Keranjang · BuBe.co</title>
+    <meta name="description" content="Keranjang belanja BuBe.co. Update quantity, hapus item, dan lanjut ke checkout." />
+    <link rel="stylesheet" href="./assets/css/styles.css" />
+  </head>
+  <body data-page="cart">
+    <div data-slot="header"></div>
+
+    <main class="container" style="padding: 22px 16px 0;">
+      <div class="section" style="padding-top: 0;">
+        <div class="eyebrow">KERANJANG</div>
+        <h1 class="h2" style="margin-top: 10px;">Keranjang Belanja</h1>
+        <p class="muted" style="margin-top: 10px;">Cek kembali ukuran dan warna sebelum checkout.</p>
+      </div>
+
+      <div id="cartRoot" class="grid" style="margin-top: 16px; grid-template-columns: 1fr; gap: 16px;">
+        <section class="grid" id="cartItems" style="gap: 12px;"></section>
+        <aside class="card pad">
+          <div style="font-weight: 900;">Ringkasan</div>
+          <div style="margin-top: 12px; display:flex; justify-content:space-between; color: rgb(var(--ink-2));">
+            <span>Subtotal</span>
+            <span style="font-weight: 900;" id="cartSubtotal">Rp 0</span>
+          </div>
+          <div style="margin-top: 8px; display:flex; justify-content:space-between; color: rgb(var(--ink-2));">
+            <span>Ongkir</span>
+            <span class="muted">Hitung saat checkout</span>
+          </div>
+          <div style="margin-top: 14px; border-top: 1px solid rgba(var(--gold-1),0.10); padding-top: 14px; display:flex; justify-content:space-between; color: rgb(var(--ink-2));">
+            <span>Total</span>
+            <span style="font-weight: 900;" id="cartTotal">Rp 0</span>
+          </div>
+          <a class="btn primary" href="./checkout.html" style="margin-top: 14px; width: 100%;">Checkout</a>
+          <a class="btn" href="./shop.html" style="margin-top: 10px; width: 100%;">Lanjut Belanja</a>
+        </aside>
+      </div>
+    </main>
+
+    <div data-slot="footer"></div>
+    <div data-slot="fab"></div>
+
+    <script src="./assets/js/env.js"></script>
+    <script type="module" src="./assets/js/app.js"></script>
+  </body>
+</html>
+
